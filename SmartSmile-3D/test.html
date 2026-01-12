@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="uk">
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartSmile — Діагностика </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { background: #f0f4ff; color: #0f172a; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: linear-gradient(90deg, #1E3A8A, #3B82F6);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo { height: 50px; }
+
+    nav a {
+      margin-left: 20px;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover { text-decoration: underline; }
+
+    main {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: #1E3A8A;
+      text-align: center;
+      margin: 40px 0 20px;
+      font-size: 1.8rem;
+    }
+
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 10px;
+      border: 3px solid #1E3A8A;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-weight: 600;
+      color: #1E40AF;
+    }
+
+
+    details {
+      background: white;
+      border-radius: 12px;
+      margin: 15px 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 15px 20px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      background: #e0e7ff;
+      border-radius: 12px;
+      list-style: none;
+      transition: background 0.3s;
+    }
+
+    summary:hover {
+      background: #c7d2fe;
+    }
+
+    details[open] summary {
+      background: #1E3A8A;
+      color: white;
+    }
+
+    .content {
+      padding: 20px;
+      background: #dbeafe;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+      color: #0f172a;
+    }
+
+    .content img {
+      width: 220px;
+      border-radius: 10px;
+      border: 3px solid #1E3A8A;
+    }
+
+    a {
+      color: #1E40AF;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    footer {
+      background-color: #1E3A8A;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .content { flex-direction: column; text-align: center; }
+      .card img, .content img { width: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-title">
+      <img src="images/logo.png" alt="SmartSmile logo" class="logo">
+      <h1>SmartSmile</h1>
+    </div>
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="bites.html">Види прикусів</a>
+      <a href="methods.html" class="active">Методи лікування</a>
+      <a href="gnathology.html">Гнатологія</a>
+      <a href="test.html">Діагностика</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Діагностика твоєї посмішки!</h2>
+    <p>Відповідай на запитання, щоб дізнатися про стан свого прикусу 🦷</p>
+
+    <div class="question">
+      <p> 1. Чи перекривають верхні зуби нижні більше ніж на половину?</p>
+      <input type="radio" name="q1" value="deep"> Так  
+      <input type="radio" name="q1" value="normal"> Ні
+    </div>
+
+    <div class="question">
+      <p> 2. Чи чуєш клацання у щелепі під час жування?</p>
+      <input type="radio" name="q2" value="joint"> Так  
+      <input type="radio" name="q2" value="normal"> Ні
+    </div>
+
+    <div class="question">
+      <p> 3. Чи є біль у щелепі або голові після сну?</p>
+      <input type="radio" name="q3" value="load"> Так  
+      <input type="radio" name="q3" value="normal"> Ні
+    </div>
+
+    <button onclick="checkTest()">Дізнатись результат</button>
+    <div id="result"></div>
+  </main>
+
+  <footer>
+    <p>© 2025 SmartSmile</p>
+  </footer>
+
+  <script>
+    function checkTest() {
+      let score = {deep:0, joint:0, load:0, normal:0};
+      document.querySelectorAll("input[type='radio']:checked").forEach(a => score[a.value]++);
+
+      let result = "Ваш прикус у межах норми.";
+      if (score.deep >= 1) result = "Можливо, у вас глибокий прикус.";
+      if (score.joint >= 1) result = "Можливо, є перевантаження ЩЛС.";
+      if (score.load >= 1) result = "Ймовірно, м’язове напруження або неправильний прикус.";
+
+      document.getElementById("result").innerText = result;
+    }
+  </script>
+</body>
+</html>

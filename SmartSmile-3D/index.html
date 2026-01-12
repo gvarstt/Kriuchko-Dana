@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartSmile — Головна</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { background: #f0f4ff; color: #0f172a; }
+
+    a { text-decoration: none; color: inherit; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: linear-gradient(90deg, #1E3A8A, #3B82F6);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo { height: 50px; }
+
+    nav a {
+      margin-left: 20px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover { text-decoration: underline; }
+
+    .lang-switch {
+      margin-left: 30px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    main.home {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    main.home h2 {
+      color: #1E3A8A;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease forwards;
+    }
+
+    main.home p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    main.home p span {
+      font-weight: 600;
+      color: #2563EB;
+    }
+
+    .highlight {
+      background-color: #e0f0ff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      display: inline-block;
+      margin: 5px 0;
+    }
+
+    footer {
+      background-color: #1E3A8A;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+    }
+
+    @keyframes fadeInDown { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 768px) {
+      header { flex-direction: column; gap: 15px; }
+      nav a { margin-left: 0; margin-top: 10px; display: inline-block; }
+      main.home h2 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  
+  <header>
+    <div class="logo-title">
+      <img src="images/logo.png" alt="SmartSmile logo" class="logo">
+      <h1>SmartSmile</h1>
+    </div>
+    <nav>
+      <a href="index.html" class="nav-btn">Головна</a>
+      <a href="bites.html" class="nav-btn">Види прикусів</a>
+      <a href="methods.html" class="nav-btn">Методи лікування</a>
+      <a href="gnathology.html" class="nav-btn">Гнатологія</a>
+      <a href="test.html" class="nav-btn">Діагностика</a>
+    </nav>
+    
+  </header>
+
+
+  <main class="home">
+    <h2 id="about-title">Навіщо потрібен цей сайт</h2>
+    <p id="about-text">
+      Хочеш знати, як правильно піклуватися про свій <span class="highlight">усміх і прикус</span>?  
+      Тут ти знайдеш прості та цікаві пояснення про сучасні методи лікування, а також дізнаєшся, як гнатологія допомагає зберегти здорову посмішку на довгі роки.
+    </p>
+    <p>
+      Ми зробили все, щоб <span class="highlight">ортодонтія</span> стала не нудною темою, а справжнім пригодницьким досвідом для підлітків.  
+      Ти зможеш легко зрозуміти свій прикус, дізнатись про різні методи лікування та пройти <span class="highlight">онлайн-тест</span>, який допоможе визначити, що саме підходить тобі.
+    </p>
+    <p>
+      Готовий дізнатись більше та отримати свій ідеальний усміх? Тоді вперед — досліджуй сайт та відкривай нові можливості!
+    </p>
+  </main>
+
+
+  <footer>
+    <p>© 2025 SmartSmile | Крючко Дана</p>
+  </footer>
+
+
+</body>
+</html>
+
